@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Biblioteca Digital UniFECAF: acervo, unidades e contatos para estudantes.">
+  <title>Biblioteca Digital UniFECAF</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- ========== CABEÇALHO / NAVEGAÇÃO ========== -->
+  <header class="topo">
+    <div class="topo__interno">
+      <a class="marca" href="#biblioteca" aria-label="Biblioteca Digital UniFECAF">
+        <span class="marca__icone" aria-hidden="true">U</span>
+        <span class="marca__texto">UniFECAF <small>Biblioteca Digital</small></span>
+      </a>
+
+      <input type="checkbox" id="menu-toggle" class="menu-toggle">
+      <label for="menu-toggle" class="menu-botao" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="menu" aria-label="Navegação principal">
+        <ul>
+          <li><a class="ativo" href="#biblioteca">Biblioteca</a></li>
+          <li><a href="#livros">Livros</a></li>
+          <li><a href="#unidades">Unidades</a></li>
+          <li><a href="#contatos">Contatos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="biblioteca">
+      <div class="hero__foto" role="img" aria-label="Estantes de uma biblioteca com milhares de livros"></div>
+      <div class="hero__conteudo">
+        <p class="selo">Acervo digital e físico</p>
+        <h1>Conhecimento a um clique de distância</h1>
+        <p class="hero__texto">Livros, materiais acadêmicos e conteúdos de apoio para acompanhar cada etapa da sua jornada na UniFECAF.</p>
+        <a class="botao botao--destaque" href="#livros">Explorar o acervo</a>
+      </div>
+    </section>
+
+    <!-- ========== SOBRE ========== -->
+    <section class="sobre secao secao--escura">
+      <div class="container">
+        <h2 class="titulo-secao">Sobre a nossa biblioteca</h2>
+
+        <div class="sobre__grade">
+          <p>A Biblioteca Digital da UniFECAF nasceu para aproximar o estudante do conhecimento. Reunimos livros, periódicos e materiais de apoio em um só lugar, com busca simples e acesso a qualquer hora, pelo computador ou pelo smartphone.</p>
+
+          <figure class="sobre__destaque">
+            <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=800&q=70" alt="Leitor escolhendo um livro em uma estante" loading="lazy">
+          </figure>
+
+          <p>Nossa equipe seleciona obras alinhadas aos cursos da instituição e atualiza o acervo continuamente. Seja para pesquisar, estudar para a prova ou ler por prazer, a biblioteca é um espaço pensado para você.</p>
+        </div>
+
+        <ul class="galeria">
+          <li><img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=500&q=70" alt="Pilha de livros abertos sobre uma mesa" loading="lazy"></li>
+          <li><img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=500&q=70" alt="Corredor de biblioteca com estantes altas" loading="lazy"></li>
+          <li><img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=500&q=70" alt="Biblioteca clássica com livros até o teto" loading="lazy"></li>
+          <li><img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=500&q=70" alt="Estudante lendo com livros ao redor" loading="lazy"></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========== FAIXA / BANNER ========== -->
+    <section class="faixa" aria-label="Destaques da biblioteca">
+      <div class="faixa__foto" role="img" aria-label="Livros organizados em uma estante"></div>
+      <div class="faixa__conteudo">
+        <ul class="numeros">
+          <li><strong>+10 mil</strong><span>títulos disponíveis</span></li>
+          <li><strong>24h</strong><span>de acesso online</span></li>
+          <li><strong>3</strong><span>unidades para visitar</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========== NOSSOS LIVROS ========== -->
+    <section class="livros secao secao--media" id="livros">
+      <div class="container">
+        <h2 class="titulo-secao">Nossos livros</h2>
+
+        <div class="livros__grade">
+
+          <article class="cartao">
+            <h3>Código Limpo</h3>
+            <div class="capa"><img src="https://covers.openlibrary.org/b/isbn/9780132350884-L.jpg" alt="Capa do livro Clean Code, de Robert C. Martin" loading="lazy"></div>
+            <p>Princípios e boas práticas para escrever software legível, simples de manter e fácil de evoluir.</p>
+            <a class="botao" href="#contatos">Saiba mais</a>
+          </article>
+
+          <article class="cartao">
+            <h3>O Programador Pragmático</h3>
+            <div class="capa"><img src="https://covers.openlibrary.org/b/isbn/9780135957059-L.jpg" alt="Capa do livro The Pragmatic Programmer" loading="lazy"></div>
+            <p>Dicas práticas de dois veteranos para crescer na carreira e entregar projetos de qualidade.</p>
+            <a class="botao" href="#contatos">Saiba mais</a>
+          </article>
+
+          <article class="cartao">
+            <h3>Padrões de Projeto</h3>
+            <div class="capa"><img src="https://covers.openlibrary.org/b/isbn/9780201633610-L.jpg" alt="Capa do livro Design Patterns, da Gang of Four" loading="lazy"></div>
+            <p>Um clássico sobre soluções reutilizáveis para problemas recorrentes de orientação a objetos.</p>
+            <a class="botao" href="#contatos">Saiba mais</a>
+          </article>
+
+          <article class="cartao">
+            <h3>Algoritmos</h3>
+            <div class="capa"><img src="https://covers.openlibrary.org/b/isbn/9780262033848-L.jpg" alt="Capa do livro Introduction to Algorithms" loading="lazy"></div>
+            <p>Referência completa sobre estruturas de dados e análise de algoritmos, presente em todo curso de computação.</p>
+            <a class="botao" href="#contatos">Saiba mais</a>
+          </article>
+
+          <article class="cartao">
+            <h3>Não Me Faça Pensar</h3>
+            <div class="capa"><img src="https://covers.openlibrary.org/b/isbn/9780321965516-L.jpg" alt="Capa do livro Don't Make Me Think, de Steve Krug" loading="lazy"></div>
+            <p>Guia leve e direto sobre usabilidade web, ideal para quem projeta interfaces para pessoas reais.</p>
+            <a class="botao" href="#contatos">Saiba mais</a>
+          </article>
+
+          <article class="cartao">
+            <h3>HTML &amp; CSS</h3>
+            <div class="capa"><img src="https://covers.openlibrary.org/b/isbn/9781118008188-L.jpg" alt="Capa do livro HTML and CSS: Design and Build Websites, de Jon Duckett" loading="lazy"></div>
+            <p>Livro visual e didático para aprender a estruturar e estilizar páginas web desde o início.</p>
+            <a class="botao" href="#contatos">Saiba mais</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== AS UNIDADES ========== -->
+    <section class="unidades secao secao--preta" id="unidades">
+      <div class="container">
+        <h2 class="titulo-secao">As unidades</h2>
+
+        <article class="unidade">
+          <img src="https://images.unsplash.com/photo-1568667256549-094345857637?auto=format&fit=crop&w=800&q=70" alt="Sala de leitura ampla com mesas e luz natural" loading="lazy">
+          <div>
+            <h3>Unidade Taboão da Serra</h3>
+            <p>Nosso campus principal reúne o maior acervo físico, salas de estudo em grupo e cabines individuais. Fica na Av. Vida Nova, 166, Jardim Maria Rosa, Taboão da Serra – SP.</p>
+          </div>
+        </article>
+
+        <article class="unidade">
+          <img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=800&q=70" alt="Estudantes em mesas de estudo coletivo" loading="lazy">
+          <div>
+            <h3>Unidade Polo de Apoio</h3>
+            <p>Presente em mais de 500 polos pelo país, oferece computadores, internet e orientação para acessar o acervo digital e retirar obras por empréstimo.</p>
+          </div>
+        </article>
+
+        <article class="unidade">
+          <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=800&q=70" alt="Notebook e livros sobre uma mesa de estudos" loading="lazy">
+          <div>
+            <h3>Unidade Virtual</h3>
+            <p>Acesso integral pela internet, 24 horas por dia, com leitura online, downloads autorizados e atendimento por chat para tirar dúvidas.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========== CONTATOS ========== -->
+    <section class="contatos secao secao--clara" id="contatos">
+      <div class="container contatos__grade">
+        <div>
+          <h2 class="titulo-secao titulo-secao--escuro">Contatos</h2>
+          <p>Ficou com alguma dúvida sobre o acervo, empréstimos ou cadastro? Fale com a equipe da biblioteca. Teremos prazer em ajudar você a encontrar o material certo.</p>
+          <ul class="lista-contato">
+            <li><strong>Telefone / WhatsApp:</strong> <a href="tel:+551142104950">(11) 4210-4950</a></li>
+            <li><strong>Endereço:</strong> Av. Vida Nova, 166, Jardim Maria Rosa, Taboão da Serra – SP, 06764-045</li>
+            <li><strong>Site institucional:</strong> <a href="https://www.unifecaf.com.br" target="_blank" rel="noopener">unifecaf.com.br</a></li>
+          </ul>
+        </div>
+        <img class="contatos__foto" src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=700&q=70" alt="Livros empilhados em uma mesa de leitura" loading="lazy">
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="rodape">
+    <p>&copy; 2026 Biblioteca Digital UniFECAF. Projeto acadêmico da disciplina Design Web.</p>
+  </footer>
+
+</body>
+</html>
