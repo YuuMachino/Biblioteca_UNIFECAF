@@ -1,0 +1,268 @@
+/* =========================================================
+   Biblioteca Digital UniFECAF — style.css
+   Paleta: azul institucional + verde de destaque
+   ========================================================= */
+
+:root {
+  --azul-900: #012f4d;
+  --azul-800: #014b7a;
+  --azul-700: #0064a8;
+  --azul-100: #e6f1f8;
+  --verde:  #1bb167;
+  --verde-escuro: #14925a;
+  --preto:    #03121e;
+  --branco:   #ffffff;
+  --cinza-100: #f1f6f9;
+  --cinza-300: #c3d4e0;
+  --texto:    #12263a;
+
+  --fonte-titulo: "Fraunces", Georgia, serif;
+  --fonte-texto: "Inter", Arial, sans-serif;
+  --raio: 14px;
+  --sombra: 0 10px 30px rgba(3, 18, 30, .25);
+}
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+
+body {
+  margin: 0;
+  font-family: var(--fonte-texto);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--texto);
+  background: var(--azul-900);
+}
+
+img { display: block; max-width: 100%; height: auto; }
+h1, h2, h3 { font-family: var(--fonte-titulo); line-height: 1.2; margin: 0 0 .6em; }
+p { margin: 0 0 1em; }
+ul { margin: 0; padding: 0; list-style: none; }
+a { color: inherit; }
+
+a:focus-visible, label:focus-visible, .botao:focus-visible {
+  outline: 3px solid var(--verde);
+  outline-offset: 3px;
+}
+
+.container { width: min(1120px, 100% - 2.5rem); margin-inline: auto; }
+
+.skip-link {
+  position: absolute; left: 1rem; top: -4rem;
+  background: var(--verde); color: var(--preto);
+  padding: .6rem 1rem; border-radius: 8px; z-index: 100;
+}
+.skip-link:focus { top: 1rem; }
+
+/* ---------- Botões ---------- */
+.botao {
+  display: inline-block;
+  padding: .7rem 1.6rem;
+  border-radius: 999px;
+  background: var(--azul-800);
+  color: var(--branco);
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform .2s, background .2s, box-shadow .2s;
+}
+.botao:hover { background: var(--azul-700); transform: translateY(-2px); box-shadow: 0 8px 18px rgba(1, 75, 122, .35); }
+.botao--destaque { background: var(--verde); color: var(--preto); padding: .9rem 2rem; }
+.botao--destaque:hover { background: var(--verde-escuro); }
+
+/* ---------- Topo / navegação ---------- */
+.topo {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(1, 47, 77, .92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, .08);
+}
+.topo__interno {
+  width: min(1120px, 100% - 2.5rem);
+  margin-inline: auto;
+  min-height: 68px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.marca { display: flex; align-items: center; gap: .7rem; text-decoration: none; color: var(--branco); }
+.marca__icone {
+  width: 40px; height: 40px; border-radius: 10px;
+  display: grid; place-items: center;
+  background: var(--verde); color: var(--preto);
+  font-family: var(--fonte-titulo); font-weight: 700; font-size: 1.4rem;
+}
+.marca__texto { font-family: var(--fonte-titulo); font-weight: 700; font-size: 1.15rem; line-height: 1.1; }
+.marca__texto small { display: block; font-family: var(--fonte-texto); font-weight: 500; font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; color: var(--cinza-300); }
+
+.menu ul { display: flex; gap: .4rem; }
+.menu a {
+  display: block; padding: .5rem 1rem; border-radius: 8px;
+  color: var(--branco); text-decoration: none; font-weight: 500; font-size: .95rem;
+  transition: background .2s, color .2s;
+}
+.menu a:hover { background: rgba(255, 255, 255, .12); }
+.menu a.ativo { background: var(--verde); color: var(--preto); }
+
+/* menu hamburguer (somente CSS) */
+.menu-toggle { position: absolute; opacity: 0; pointer-events: none; }
+.menu-botao { display: none; cursor: pointer; padding: .6rem; }
+.menu-botao span { display: block; width: 24px; height: 2px; background: var(--branco); margin: 5px 0; transition: transform .25s, opacity .25s; }
+.menu-toggle:focus-visible + .menu-botao { outline: 3px solid var(--verde); border-radius: 6px; }
+
+/* ---------- Seções (comuns) ---------- */
+.secao { padding: 5rem 0; color: var(--branco); }
+.secao--escura { background: linear-gradient(180deg, var(--azul-800), var(--azul-900)); }
+.secao--media  { background: var(--azul-800); }
+.secao--preta  { background: var(--preto); }
+.secao--clara  { background: var(--cinza-100); color: var(--texto); }
+
+.titulo-secao {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  letter-spacing: .18em; text-transform: uppercase;
+  margin-bottom: 2.2rem;
+  display: flex; align-items: center; gap: 1rem;
+}
+.titulo-secao::before { content: ""; width: 44px; height: 4px; border-radius: 4px; background: var(--verde); flex: none; }
+.titulo-secao--escuro { color: var(--azul-900); }
+
+/* ---------- Hero ---------- */
+.hero { position: relative; min-height: 78vh; display: grid; align-items: center; overflow: hidden; }
+.hero__foto {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(90deg, rgba(1, 47, 77, .92) 25%, rgba(1, 47, 77, .35)),
+    url("https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1800&q=70") center / cover,
+    var(--azul-800);
+}
+.hero__conteudo { position: relative; width: min(1120px, 100% - 2.5rem); margin-inline: auto; padding: 4rem 0; color: var(--branco); }
+.hero h1 { font-size: clamp(2.2rem, 5.5vw, 4rem); max-width: 14ch; }
+.hero__texto { max-width: 52ch; font-size: 1.15rem; color: var(--azul-100); margin-bottom: 2rem; }
+.selo {
+  display: inline-block; padding: .3rem .9rem; border-radius: 999px;
+  border: 1px solid var(--verde); color: var(--verde);
+  font-size: .8rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+}
+
+/* ---------- Sobre ---------- */
+.sobre__grade {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem; align-items: center;
+  margin-bottom: 3rem;
+  color: var(--azul-100);
+}
+.sobre__destaque { margin: 0; }
+.sobre__destaque img, .galeria img {
+  width: 100%; aspect-ratio: 4 / 3; object-fit: cover;
+  border-radius: var(--raio); box-shadow: var(--sombra);
+  background: linear-gradient(135deg, var(--azul-700), var(--azul-900));
+}
+.galeria { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+.galeria img { transition: transform .3s; }
+.galeria img:hover { transform: scale(1.04) rotate(-1deg); }
+
+/* ---------- Faixa ---------- */
+.faixa { position: relative; min-height: 300px; display: grid; align-items: center; }
+.faixa__foto {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(rgba(3, 18, 30, .72), rgba(3, 18, 30, .72)),
+    url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1800&q=70") center / cover fixed,
+    var(--azul-900);
+}
+.faixa__conteudo { position: relative; width: min(1120px, 100% - 2.5rem); margin-inline: auto; padding: 3rem 0; }
+.numeros { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; text-align: center; color: var(--branco); }
+.numeros strong { display: block; font-family: var(--fonte-titulo); font-size: clamp(2rem, 5vw, 3.2rem); color: var(--verde); }
+.numeros span { font-size: .95rem; letter-spacing: .06em; text-transform: uppercase; color: var(--azul-100); }
+
+/* ---------- Livros ---------- */
+.livros__grade { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.cartao {
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+  background: var(--branco); color: var(--texto);
+  padding: 1.6rem 1.4rem 1.8rem;
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  transition: transform .25s, box-shadow .25s;
+}
+.cartao:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(0, 0, 0, .4); }
+.cartao h3 { font-size: 1.15rem; letter-spacing: .08em; text-transform: uppercase; color: var(--azul-900); min-height: 2.8em; display: grid; align-items: center; }
+.capa {
+  width: 150px; aspect-ratio: 2 / 3; margin: .4rem 0 1.2rem;
+  border-radius: 4px 8px 8px 4px;
+  background: linear-gradient(135deg, var(--azul-700), var(--azul-900));
+  box-shadow: -4px 6px 0 rgba(1, 47, 77, .12), 8px 14px 24px rgba(1, 47, 77, .35);
+  overflow: hidden;
+}
+.capa img { width: 100%; height: 100%; object-fit: cover; font-size: .75rem; color: var(--branco); }
+.cartao p { flex: 1; font-size: .95rem; color: #34506a; }
+
+/* ---------- Unidades ---------- */
+.unidade {
+  display: grid; grid-template-columns: 1fr 1.2fr; gap: 3rem; align-items: center;
+  margin-bottom: 3.5rem;
+}
+.unidade:last-child { margin-bottom: 0; }
+.unidade:nth-child(odd) img { order: 2; }
+.unidade img {
+  width: 100%; aspect-ratio: 16 / 10; object-fit: cover;
+  border-radius: var(--raio); box-shadow: var(--sombra);
+  background: linear-gradient(135deg, var(--azul-700), var(--azul-900));
+}
+.unidade h3 { font-size: 1.4rem; letter-spacing: .08em; color: var(--verde); }
+.unidade p { color: var(--cinza-300); }
+
+/* ---------- Contatos ---------- */
+.contatos__grade { display: grid; grid-template-columns: 1.4fr 1fr; gap: 3rem; align-items: center; }
+.contatos__foto {
+  width: 100%; aspect-ratio: 4 / 3; object-fit: cover;
+  border-radius: var(--raio); box-shadow: var(--sombra);
+  background: linear-gradient(135deg, var(--azul-700), var(--azul-900));
+}
+.lista-contato { display: grid; gap: .6rem; margin-top: 1.4rem; }
+.lista-contato a { color: var(--azul-700); font-weight: 600; }
+
+/* ---------- Rodapé ---------- */
+.rodape { background: var(--preto); color: var(--cinza-300); text-align: center; padding: 1.6rem 1rem; font-size: .9rem; }
+.rodape p { margin: 0; }
+
+/* =========================================================
+   Responsivo
+   ========================================================= */
+@media (max-width: 960px) {
+  .sobre__grade { grid-template-columns: 1fr; }
+  .galeria { grid-template-columns: repeat(2, 1fr); }
+  .livros__grade { grid-template-columns: repeat(2, 1fr); }
+  .unidade, .contatos__grade { grid-template-columns: 1fr; gap: 1.5rem; }
+  .unidade:nth-child(odd) img { order: 0; }
+  .faixa__foto { background-attachment: scroll; }
+}
+
+@media (max-width: 720px) {
+  .menu-botao { display: block; }
+  .menu {
+    position: absolute; top: 100%; left: 0; right: 0;
+    background: var(--azul-900);
+    max-height: 0; overflow: hidden;
+    transition: max-height .3s ease;
+  }
+  .menu ul { flex-direction: column; padding: .5rem 1.25rem 1.2rem; }
+  .menu a { padding: .8rem 1rem; }
+  .menu-toggle:checked ~ .menu { max-height: 320px; }
+  .menu-toggle:checked + .menu-botao span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .menu-toggle:checked + .menu-botao span:nth-child(2) { opacity: 0; }
+  .menu-toggle:checked + .menu-botao span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .secao { padding: 3.5rem 0; }
+  .hero { min-height: 70vh; }
+  .hero__foto { background: linear-gradient(rgba(1, 47, 77, .85), rgba(1, 47, 77, .7)), url("https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=900&q=70") center / cover, var(--azul-800); }
+  .livros__grade { grid-template-columns: 1fr; }
+  .numeros { grid-template-columns: 1fr; }
+  .titulo-secao { letter-spacing: .1em; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
