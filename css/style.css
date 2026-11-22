@@ -1,8 +1,3 @@
-/* =========================================================
-   Biblioteca Digital UniFECAF — style.css
-   Paleta: azul institucional + verde de destaque
-   ========================================================= */
-
 :root {
   --azul-900: #012f4d;
   --azul-800: #014b7a;
@@ -22,7 +17,7 @@
   --sombra: 0 10px 30px rgba(3, 18, 30, .25);
 }
 
-/* ---------- Base ---------- */
+
 *, *::before, *::after { box-sizing: border-box; }
 
 html { scroll-behavior: smooth; scroll-padding-top: 76px; }
@@ -56,7 +51,7 @@ a:focus-visible, label:focus-visible, .botao:focus-visible {
 }
 .skip-link:focus { top: 1rem; }
 
-/* ---------- Botões ---------- */
+
 .botao {
   display: inline-block;
   padding: .7rem 1.6rem;
@@ -71,7 +66,7 @@ a:focus-visible, label:focus-visible, .botao:focus-visible {
 .botao--destaque { background: var(--verde); color: var(--preto); padding: .9rem 2rem; }
 .botao--destaque:hover { background: var(--verde-escuro); }
 
-/* ---------- Topo / navegação ---------- */
+
 .topo {
   position: sticky; top: 0; z-index: 50;
   background: rgba(1, 47, 77, .92);
@@ -104,13 +99,12 @@ a:focus-visible, label:focus-visible, .botao:focus-visible {
 .menu a:hover { background: rgba(255, 255, 255, .12); }
 .menu a.ativo { background: var(--verde); color: var(--preto); }
 
-/* menu hamburguer (somente CSS) */
+
 .menu-toggle { position: absolute; opacity: 0; pointer-events: none; }
 .menu-botao { display: none; cursor: pointer; padding: .6rem; }
 .menu-botao span { display: block; width: 24px; height: 2px; background: var(--branco); margin: 5px 0; transition: transform .25s, opacity .25s; }
 .menu-toggle:focus-visible + .menu-botao { outline: 3px solid var(--verde); border-radius: 6px; }
 
-/* ---------- Seções (comuns) ---------- */
 .secao { padding: 5rem 0; color: var(--branco); }
 .secao--escura { background: linear-gradient(180deg, var(--azul-800), var(--azul-900)); }
 .secao--media  { background: var(--azul-800); }
@@ -126,7 +120,6 @@ a:focus-visible, label:focus-visible, .botao:focus-visible {
 .titulo-secao::before { content: ""; width: 44px; height: 4px; border-radius: 4px; background: var(--verde); flex: none; }
 .titulo-secao--escuro { color: var(--azul-900); }
 
-/* ---------- Hero ---------- */
 .hero { position: relative; min-height: 78vh; display: grid; align-items: center; overflow: hidden; }
 .hero__foto {
   position: absolute; inset: 0;
@@ -144,7 +137,6 @@ a:focus-visible, label:focus-visible, .botao:focus-visible {
   font-size: .8rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
 }
 
-/* ---------- Sobre ---------- */
 .sobre__grade {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -162,7 +154,6 @@ a:focus-visible, label:focus-visible, .botao:focus-visible {
 .galeria img { transition: transform .3s; }
 .galeria img:hover { transform: scale(1.04) rotate(-1deg); }
 
-/* ---------- Faixa ---------- */
 .faixa { position: relative; min-height: 300px; display: grid; align-items: center; }
 .faixa__foto {
   position: absolute; inset: 0;
@@ -176,7 +167,6 @@ a:focus-visible, label:focus-visible, .botao:focus-visible {
 .numeros strong { display: block; font-family: var(--fonte-titulo); font-size: clamp(2rem, 5vw, 3.2rem); color: var(--verde); }
 .numeros span { font-size: .95rem; letter-spacing: .06em; text-transform: uppercase; color: var(--azul-100); }
 
-/* ---------- Livros ---------- */
 .livros__grade { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
 .cartao {
   display: flex; flex-direction: column; align-items: center; text-align: center;
@@ -198,7 +188,6 @@ a:focus-visible, label:focus-visible, .botao:focus-visible {
 .capa img { width: 100%; height: 100%; object-fit: cover; font-size: .75rem; color: var(--branco); }
 .cartao p { flex: 1; font-size: .95rem; color: #34506a; }
 
-/* ---------- Unidades ---------- */
 .unidade {
   display: grid; grid-template-columns: 1fr 1.2fr; gap: 3rem; align-items: center;
   margin-bottom: 3.5rem;
@@ -213,7 +202,6 @@ a:focus-visible, label:focus-visible, .botao:focus-visible {
 .unidade h3 { font-size: 1.4rem; letter-spacing: .08em; color: var(--verde); }
 .unidade p { color: var(--cinza-300); }
 
-/* ---------- Contatos ---------- */
 .contatos__grade { display: grid; grid-template-columns: 1.4fr 1fr; gap: 3rem; align-items: center; }
 .contatos__foto {
   width: 100%; aspect-ratio: 4 / 3; object-fit: cover;
@@ -223,13 +211,9 @@ a:focus-visible, label:focus-visible, .botao:focus-visible {
 .lista-contato { display: grid; gap: .6rem; margin-top: 1.4rem; }
 .lista-contato a { color: var(--azul-700); font-weight: 600; }
 
-/* ---------- Rodapé ---------- */
 .rodape { background: var(--preto); color: var(--cinza-300); text-align: center; padding: 1.6rem 1rem; font-size: .9rem; }
 .rodape p { margin: 0; }
 
-/* =========================================================
-   Responsivo
-   ========================================================= */
 @media (max-width: 960px) {
   .sobre__grade { grid-template-columns: 1fr; }
   .galeria { grid-template-columns: repeat(2, 1fr); }
